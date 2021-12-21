@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-print("The string Last digit of {:d}" .format(number), sep="")
+print("The string Last digit of {:d} " .format(number), end="")
 if number < 0:
     number = number * (-1)
 while number > 9:
