@@ -6,7 +6,7 @@ if number < 0:
     i = ((-number) % 10) * 1
 while i > 9:
     i = number % 10
-print("Last digit of {:d} is {:d} " .format(number, i), end="")
+print("Last digit of {} is {} " .format(number, i), end="")
 
 if i > 5:
     print("and is greater than 5")
