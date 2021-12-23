@@ -3,7 +3,7 @@ from sys import argv
 i = 0
 j = len(argv) - 1
 if j == 0:
-    print("{} arguments.".format(j))
+    print("{} argument.".format(j))
 else:
     print("{} arguments:".format(j))
 while (i < j):
