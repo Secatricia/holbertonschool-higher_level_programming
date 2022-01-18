@@ -1,7 +1,10 @@
-#!/bin/usr/python3
-"""Create Square"""
+#!/usr/bin/python3
+"""class Square"""
+
+
 class Square:
     """ define __size"""
+
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -9,3 +12,7 @@ class Square:
             raise ValueError("size must be >= 0")
 
         self.__size = size
+
+    """Return square area"""
+    def area(self):
+        return(self.size * self.size)
