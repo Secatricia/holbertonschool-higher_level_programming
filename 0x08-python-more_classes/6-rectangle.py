@@ -15,7 +15,6 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        self.id = Rectangle.number_of_instances
 
     """Define width"""
     @property
@@ -84,7 +83,8 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.width, self.height)
 
     """Function that is called before deleting an object"""
+
     def __del__(self):
         """Print if objet is delete"""
-        Rectangle.number_of_instances-= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
