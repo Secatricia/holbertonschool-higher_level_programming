@@ -63,7 +63,7 @@ class Rectangle:
     def __str__(self):
         """Return rectangle"""
         if self.__height == 0 or self.__width == 0:
-            return(None)
+            return("")
         resultat = []
         for row in range(0, self.height):
             resultat.append("#" * self.width)
