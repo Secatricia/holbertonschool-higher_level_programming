@@ -47,22 +47,22 @@ class Rectangle:
 
     def area(self):
         """return result"""
-        return(self.height * self.width)
+        return(self.__height * self.__width)
 
     """Create function that returns the rectangle perimeter"""
 
     def perimeter(self):
         """return result"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return(0)
         else:
-            return(self.width * 2 + self.height * 2)
+            return(self.__width * 2 + self.__height * 2)
 
     """Create function print the rectangle with the character #"""
 
     def __str__(self):
         """Return rectangle"""
-        if self.height == 0 or self.width == 0:
+        if self.__height == 0 or self.__width == 0:
             return(None)
         resultat = []
         for row in range(0, self.height):
