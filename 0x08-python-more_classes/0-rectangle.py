@@ -2,6 +2,6 @@
 """create class rectangle"""
 
 
-class rectangle:
+class Rectangle:
     """pass"""
     pass
