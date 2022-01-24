@@ -59,6 +59,7 @@ class Rectangle:
             return(self.width * 2 + self.height * 2)
 
     """Create function print the rectangle with the character #"""
+
     def __str__(self):
         """Return rectangle"""
         if self.height == 0 or self.width == 0:
