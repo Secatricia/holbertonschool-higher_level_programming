@@ -2,9 +2,6 @@
 """Create class rectangle"""
 
 
-from itertools import count
-
-
 class Rectangle:
 
     number_of_instances = 0
