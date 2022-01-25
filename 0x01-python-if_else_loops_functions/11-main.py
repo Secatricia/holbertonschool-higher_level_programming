@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import math
+
 pow = __import__('11-pow').pow
 
 print(pow(2, 2))
