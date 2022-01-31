@@ -2,9 +2,6 @@
 """class BaseGeometry (based on 5-base_geometry.py)"""
 
 
-from curses.textpad import rectangle
-
-
 class BaseGeometry:
     """Create BaseGeometry class"""
 
