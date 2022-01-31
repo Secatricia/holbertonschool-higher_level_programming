@@ -30,3 +30,8 @@ Now use it:
 	Traceback (most recent call last):
 	...
 	ValueError: taille must be greater than 0
+	>>> base_geometry.integer_validator("hey", "e")
+	Traceback (most recent call last):
+	...
+	TypeError: hey must be an integer
+
