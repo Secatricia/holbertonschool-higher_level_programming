@@ -34,4 +34,6 @@ Now use it:
 	Traceback (most recent call last):
 	...
 	TypeError: hey must be an integer
+	>>> len('print(__import__("7-base_geometry").BaseGeometry.__doc__)') > 1
+	True
 
