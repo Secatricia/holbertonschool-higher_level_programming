@@ -3,8 +3,10 @@
 (7-base_geometry.py). (task based on 8-rectangle.py)"""
 BaseGeometry = __import__('8-rectangle').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """Create Rectangle class"""
+
     def __init__(self, width, height):
         """Create __init__ function"""
         super().integer_validator("width", width)
