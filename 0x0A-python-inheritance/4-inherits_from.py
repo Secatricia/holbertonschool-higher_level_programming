@@ -6,7 +6,7 @@ from the specified class ; otherwise False."""
 
 def inherits_from(obj, a_class):
     """Return True or False"""
-    if type(obj) != a_class:
-        return True
-    else:
+    if type(obj) == a_class:
         return False
+    else:
+        return True
