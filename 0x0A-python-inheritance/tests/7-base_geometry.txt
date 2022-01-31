@@ -14,7 +14,6 @@ Now use it:
 
     >>> len('print(__import__("7-base_geometry").__doc__)') > 1
 	True
-
 	>>> base_geometry.integer_validator("Bonjour", 2)
 	>>> base_geometry.integer_validator("height", 15)
 	>>> base_geometry.integer_validator(5, 15)
@@ -24,12 +23,12 @@ Now use it:
 	...
 	TypeError: hey must be an integer
 	
-	>>> bg.integer_validator("hey", 6.7)
+	>>> base_geometry.integer_validator("hey", 6.7)
 	Traceback (most recent call last):
 	...
 	TypeError: hey must be an integer
 	
-	>>> bg.integer_validator("taille", 0)
+	>>> base_geometry.integer_validator("taille", 0)
 	Traceback (most recent call last):
 	...
 	ValueError: taille must be greater than 0
