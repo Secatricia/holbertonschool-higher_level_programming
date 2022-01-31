@@ -33,6 +33,3 @@ Now use it:
 	Traceback (most recent call last):
 	...
 	ValueError: taille must be greater than 0
-
-
-
