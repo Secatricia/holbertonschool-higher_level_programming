@@ -9,7 +9,7 @@ def pascal_triangle(n):
     list = []
     if n <= 0:
         return list
-    
+
     tp = [[1]]
 
     while len(tp) != n:
