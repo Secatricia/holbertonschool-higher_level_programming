@@ -5,6 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Define Rectangle class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialise __init__ function"""
         self.width = width
@@ -74,7 +75,13 @@ class Rectangle(Base):
         return self.height * self.width
 
     def display(self):
+        """define display function"""
         for i in range(self.height):
             for j in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """define __str__ function"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.__x, self.__y, self.width, self.height))
