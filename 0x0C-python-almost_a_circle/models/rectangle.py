@@ -4,7 +4,9 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """Define Rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """initialise __init__ function"""
         self.width = width
         self.height = height
         self.x = x
@@ -13,48 +15,56 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """define width function"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """define width function"""
         if type(width) != int:
-            raise TypeError("{} must be an integer".format(self))
+            raise TypeError("width must be an integer")
         if width <= 0:
-            raise ValueError("{} must be > 0".format(self))
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @property
     def height(self):
+        """define height function"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """define height function"""
         if type(height) != int:
-            raise TypeError("{} must be an integer".format(self))
+            raise TypeError("height must be an integer")
         if height <= 0:
-            raise ValueError("{} must be > 0".format(self))
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
     def x(self):
+        """define x function"""
         return self.__x
 
     @x.setter
     def x(self, x):
+        """define x function"""
         if type(x) != int:
-            raise TypeError("{} must be an integer".format(self))
+            raise TypeError("x must be an integer")
         if x < 0:
-            raise ValueError("{} must be >= 0".format(self))
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @property
     def y(self):
+        """define y function"""
         return self.__y
 
     @x.setter
     def y(self, y):
+        """define y function"""
         if type(y) != int:
-            raise TypeError("{} must be an integer".format(self))
+            raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError("{} must be >= 0".format(self))
+            raise ValueError("y must be >= 0")
         self.__y = y
