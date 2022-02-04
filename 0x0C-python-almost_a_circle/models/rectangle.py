@@ -89,3 +89,9 @@ class Rectangle(Base):
         """define __str__ function"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.width, self.height))
+
+    def update(self, *args):
+        """define update function"""
+        tab = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            setattr(self, tab[i], args[i])
