@@ -90,8 +90,13 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.width, self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """define update function"""
         tab = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(args)):
-            setattr(self, tab[i], args[i])
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, tab[i], args[i])
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in tab:
+                    setattr(self, key, kwargs[key])
