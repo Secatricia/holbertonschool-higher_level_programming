@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Write the first class Base"""
 import json
+import turtle
 
 
 class Base:
@@ -47,3 +48,61 @@ class Base:
             return json_string
         else:
             return json.loads(json_string)
+
+    def draw(list_rectangles, list_squares):
+        """define draw function"""
+        turtle.setup()
+        turtle.bgpic("hippocampes.png")
+        turtle.down()
+        turtle.color('red', 'yellow')
+        for i in list_rectangles:
+            turtle.up()
+            turtle.forward(i.x)
+            turtle.left(90)
+            turtle.forward(i.y)
+            turtle.left(90)
+            turtle.down()
+            turtle.fillcolor("darkblue")
+            turtle.begin_fill()
+            turtle.forward(i.width)
+            turtle.left(90)
+            turtle.forward(i.height)
+            turtle.left(90)
+            turtle.forward(i.width)
+            turtle.left(90)
+            turtle.forward(i.height)
+            turtle.left(90)
+            turtle.end_fill()
+
+        for j in list_squares:
+            turtle.up()
+            turtle.forward(i.y)
+            turtle.left(90)
+            turtle.forward(i.x)
+            turtle.left(90)
+            turtle.down()
+            turtle.fillcolor("lightblue")
+            turtle.begin_fill()
+            turtle.forward(j.size)
+            turtle.left(90)
+            turtle.forward(j.size)
+            turtle.left(90)
+            turtle.forward(j.size)
+            turtle.left(90)
+            turtle.forward(j.size)
+            turtle.left(90)
+            turtle.end_fill()
+
+        turtle.up()
+        turtle.forward(300)
+        turtle.left(90)
+        turtle.forward(300)
+        turtle.down()
+        turtle.fillcolor("yellow")
+        turtle.begin_fill()
+        turtle.circle(50)
+        turtle.end_fill()
+
+
+        turtle.exitonclick()
+
