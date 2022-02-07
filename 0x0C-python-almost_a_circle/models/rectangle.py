@@ -24,7 +24,7 @@ class Rectangle(Base):
         """define width function"""
         if type(width) != int:
             raise TypeError("width must be an integer")
-        if width <= 0:
+        elif width <= 0:
             raise ValueError("width must be > 0")
         self.__width = width
 
@@ -38,7 +38,7 @@ class Rectangle(Base):
         """define height function"""
         if type(height) != int:
             raise TypeError("height must be an integer")
-        if height <= 0:
+        elif height <= 0:
             raise ValueError("height must be > 0")
         self.__height = height
 
@@ -52,7 +52,7 @@ class Rectangle(Base):
         """define x function"""
         if type(x) != int:
             raise TypeError("x must be an integer")
-        if x < 0:
+        elif x < 0:
             raise ValueError("x must be >= 0")
         self.__x = x
 
@@ -61,12 +61,12 @@ class Rectangle(Base):
         """define y function"""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, y):
         """define y function"""
         if type(y) != int:
             raise TypeError("y must be an integer")
-        if y < 0:
+        elif y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
 
@@ -99,4 +99,9 @@ class Rectangle(Base):
         elif kwargs:
             for key, value in kwargs.items():
                 if key in tab:
-                    setattr(self, key, kwargs[key])
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """define to_dictionary function"""
+        return {'id': self.id, 'width': self.width,
+                'height': self.height, 'x': self.x, 'y': self.y}
