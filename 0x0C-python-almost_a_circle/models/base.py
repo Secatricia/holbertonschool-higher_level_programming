@@ -39,3 +39,11 @@ class Base:
         with open(file, 'w+') as fp:
             fp.write(list_str)
         fp.close
+
+    def from_json_string(json_string):
+        """define from_json_string function"""
+        if json_string is None:
+            json_string = {}
+            return json_string
+        else:
+            return json.loads(json_string)
