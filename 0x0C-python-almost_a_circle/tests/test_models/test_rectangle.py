@@ -573,19 +573,6 @@ class TestRectangle(unittest.TestCase):
 
     # save_to_file | load_from_file || save_to_file_csv | load_form_file_csv
 
-    def test_load_from_file(self):
-        r6 = Rectangle(10, 7, 2, 8, 89)
-        r7 = Rectangle(2, 4, 0, 0, 90)
-        list_rectangles_input = [r6, r7]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        r8 = list_rectangles_output[0]
-        r9 = list_rectangles_output[1]
-        self.assertIsInstance(r8, Rectangle)
-        self.assertIsInstance(r9, Rectangle)
-        self.assertIsNot(r6, r8)
-        self.assertIsNot(r7, r9)
-
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8, 10)
         r2 = Rectangle(2, 4, 0, 0, 19)
@@ -606,56 +593,6 @@ class TestRectangle(unittest.TestCase):
         with open(filename, "r") as file:
             f = (file.read())
         self.assertEqual(f, '[]')
-
-    def test_saveToFile_loadFromFile(self):
-        """Check the both saveto, and loadfrom function to a json file"""
-        r1 = Rectangle(1, 2, 3, 4, 1)
-        r2 = Rectangle(1, 2, 3, 4, 2)
-        listOfRectsInput = [r1, r2]
-        Rectangle.save_to_file(listOfRectsInput)
-        listOfRectsOutput = Rectangle.load_from_file()
-        self.assertEqual(
-            listOfRectsInput[0].to_dictionary(
-            ), listOfRectsOutput[0].to_dictionary()
-        )
-        self.assertEqual(
-            listOfRectsInput[1].to_dictionary(
-            ), listOfRectsOutput[1].to_dictionary()
-        )
-
-    def test_saveToFile_loadFromFile_empty(self):
-        """Check the both saveto, and loadfrom function to a json file"""
-        listOfRectsInput = []
-        Rectangle.save_to_file(listOfRectsInput)
-        listOfRectsOutput = Rectangle.load_from_file()
-        self.assertEqual(
-            listOfRectsInput, listOfRectsOutput
-        )
-
-    def test_saveToCSV_loadFromCSV(self):
-        """Check the both saveto, and loadfrom function to a csv file"""
-        r1 = Rectangle(1, 2, 3, 4, 1)
-        r2 = Rectangle(1, 2, 3, 4, 2)
-        listOfRectsInput = [r1, r2]
-        Rectangle.save_to_file_csv(listOfRectsInput)
-        listOfRectsOutput = Rectangle.load_from_file_csv()
-        self.assertEqual(
-            listOfRectsInput[0].to_dictionary(
-            ), listOfRectsOutput[0].to_dictionary()
-        )
-        self.assertEqual(
-            listOfRectsInput[1].to_dictionary(
-            ), listOfRectsOutput[1].to_dictionary()
-        )
-
-    def test_saveToCSV_loadFromCSV_empty(self):
-        """Check the both saveto, and loadfrom function to a csv file"""
-        listOfRectsInput = []
-        Rectangle.save_to_file_csv(listOfRectsInput)
-        listOfRectsOutput = Rectangle.load_from_file_csv()
-        self.assertEqual(
-            listOfRectsInput, listOfRectsOutput
-        )
 
     if __name__ == "__main__":
         unittest.main()
