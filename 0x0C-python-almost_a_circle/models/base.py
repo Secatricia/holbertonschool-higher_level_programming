@@ -28,6 +28,9 @@ class Base:
         """define save_to_file function"""
         file = cls.__name__ + ".json"
         dict_objet = []
+        if list_objs is None:
+            list_objs = {}
+
         for val in list_objs:
             dict_objet.append(val.to_dictionary())
 
