@@ -219,7 +219,8 @@ class TestSquareClass(unittest.TestCase):
         with io.StringIO() as buf, redirect_stdout(buf):
             r2.display()
             output = buf.getvalue()
-            self.assertEqual(output, (3 * "\n" + (" " * 7 + "#" * 8 + "\n") * 8))
+            self.assertEqual(
+                output, (3 * "\n" + (" " * 7 + "#" * 8 + "\n") * 8))
 
     ##########################################################
     # update
@@ -361,10 +362,12 @@ class TestSquareClass(unittest.TestCase):
         Square.save_to_file(listOfRectsInput)
         listOfRectsOutput = Square.load_from_file()
         self.assertEqual(
-            listOfRectsInput[0].to_dictionary(), listOfRectsOutput[0].to_dictionary()
+            listOfRectsInput[0].to_dictionary(
+            ), listOfRectsOutput[0].to_dictionary()
         )
         self.assertEqual(
-            listOfRectsInput[1].to_dictionary(), listOfRectsOutput[1].to_dictionary()
+            listOfRectsInput[1].to_dictionary(
+            ), listOfRectsOutput[1].to_dictionary()
         )
 
     def test_saveToFile_loadFromFile_empty(self):
@@ -384,10 +387,12 @@ class TestSquareClass(unittest.TestCase):
         Square.save_to_file_csv(listOfRectsInput)
         listOfRectsOutput = Square.load_from_file_csv()
         self.assertEqual(
-            listOfRectsInput[0].to_dictionary(), listOfRectsOutput[0].to_dictionary()
+            listOfRectsInput[0].to_dictionary(
+            ), listOfRectsOutput[0].to_dictionary()
         )
         self.assertEqual(
-            listOfRectsInput[1].to_dictionary(), listOfRectsOutput[1].to_dictionary()
+            listOfRectsInput[1].to_dictionary(
+            ), listOfRectsOutput[1].to_dictionary()
         )
 
     def test_saveToCSV_loadFromCSV_empty(self):
@@ -398,6 +403,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(
             listOfRectsInput, listOfRectsOutput
         )
+
 
 if __name__ == "__main__":
     unittest.main()

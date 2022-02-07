@@ -148,9 +148,9 @@ class TestBase(unittest.TestCase):
         self.assertTrue(type(l), list)
         self.assertEqual(l, [])
 
-
     if __name__ == "__main__":
         unittest.main()
+
 
 Base = base.Base
 
