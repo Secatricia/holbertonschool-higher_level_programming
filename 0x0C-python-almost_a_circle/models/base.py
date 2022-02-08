@@ -103,6 +103,4 @@ class Base:
         turtle.circle(50)
         turtle.end_fill()
 
-
         turtle.exitonclick()
-
