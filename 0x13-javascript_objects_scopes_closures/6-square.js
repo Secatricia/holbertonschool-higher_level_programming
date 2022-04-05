@@ -32,23 +32,18 @@ class Rectangle {
 class Square extends Rectangle {
   constructor (size) {
     super(size, size);
-    this.cpsize = size;
-    this.i = 0;
   }
 
   charPrint (c) {
-    if (c !== undefined) {
-      this.i = 0;
-      while (this.i < this.height) {
-        console.log(c.repeat(this.width));
-        this.i += 1;
+    let char = c;
+    if (char === undefined) {
+      char = 'X';
+    }
+    for (let i = 0; i < this.height; i++) {
+      for (let i = 0; i < this.width; i++) {
+        process.stdout.write(char);
       }
-    } else {
-      this.i = 0;
-      while (this.i < this.height) {
-        console.log('X'.repeat(this.width));
-        this.i += 1;
-      }
+      console.log('');
     }
   }
 }
