@@ -5,32 +5,27 @@ class Rectangle {
     if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
-      this.cpwidth = w;
-      this.cpheight = h;
     }
   }
 
   print () {
-    while (this.height !== 0) {
-      console.log('X'.repeat(this.width));
-      this.height -= 1;
-    }
-    this.width = this.cpwidth;
-    this.height = this.cpheight;
+	for (let i = 0; i < this.height; i++) {
+		for (let i = 0; i < this.width; i++) {
+		  process.stdout.write('X');
+		}
+		console.log('');
+	  }
   }
 
   rotate () {
-    this.width = this.cpheight;
-    this.height = this.cpwidth;
-    this.cpheight = this.width;
-    this.cpwidth = this.height;
+    const cpheight = this.height;
+    this.height = this.width;
+    this.width = cpheight;
   }
 
   double () {
-    this.width = this.cpwidth * 2;
-    this.height = this.cpheight * 2;
-    this.cpwidth = this.width;
-    this.cpheight = this.height;
+    this.width = this.width * 2;
+    this.height = this.height * 2;
   }
 }
 
