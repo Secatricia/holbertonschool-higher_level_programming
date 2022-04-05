@@ -49,6 +49,9 @@ class Base:
         else:
             return json.loads(json_string)
 
+    def create(cls, **dictionary):
+        
+
     def draw(list_rectangles, list_squares):
         """define draw function"""
         turtle.setup()
