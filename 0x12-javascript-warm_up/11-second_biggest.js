@@ -6,10 +6,11 @@ let firstBig = 0;
 if (process.argv[2] === undefined || process.argv[3] === undefined) {
   console.log('0');
 } else {
-  for (const j in process.argv) {
+  for (let j in process.argv) {
     if (process.argv[j] > firstBig) {
       firstBig = process.argv[j];
     }
+    j++;
   }
   for (let i in process.argv) {
     if (process.argv[i] > secondBig) {
