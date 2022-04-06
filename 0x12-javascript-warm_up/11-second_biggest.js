@@ -13,14 +13,11 @@ if (argvlist.length > 3) {
   }
 
   for (let i in process.argv) {
-    if (process.argv[i] > secondBig) {
-      if (process.argv[i] < firstBig) {
-        secondBig = process.argv[i];
-      } else {
-        firstBig = process.argv[i];
-      }
+    if (process.argv[i] > secondBig && process.argv[i] < firstBig) {
+      secondBig = process.argv[i];
     }
     i++;
   }
 }
+
 console.log(secondBig);
