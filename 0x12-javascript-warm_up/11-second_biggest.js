@@ -2,16 +2,16 @@
 
 let secondBig = 0;
 let firstBig = 0;
+const argvlist = process.argv;
 
-if (process.argv[2] === undefined || process.argv[3] === undefined) {
-  console.log('0');
-} else {
-  for (let j in process.argv) {
-    if (process.argv[j] > firstBig) {
-      firstBig = process.argv[j];
+if (argvlist.length > 3) {
+  for (let j in argvlist) {
+    if (argvlist[j] > firstBig) {
+      firstBig = argvlist[j];
     }
     j++;
   }
+
   for (let i in process.argv) {
     if (process.argv[i] > secondBig) {
       if (process.argv[i] < firstBig) {
@@ -22,5 +22,5 @@ if (process.argv[2] === undefined || process.argv[3] === undefined) {
     }
     i++;
   }
-  console.log(secondBig);
 }
+console.log(secondBig);
