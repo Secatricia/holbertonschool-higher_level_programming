@@ -2,11 +2,15 @@
 """takes in a URL and an email, sends a POST request
 to the passed URL with the email as a parameter"""
 
-if __name__ == "__main__":
-    import urllib.request
-    from sys import argv
+import sys
+import urllib.request
 
-    with urllib.request.urlopen(argv[1]) as r:
-        name = r.name()
-        content = name.get('X-Request-Id')
-        print(content)
+
+if __name__ == "__main__":
+    data = urllib.parse.urlencode({"email": sys.argv[2]}).encode('utf-8')
+
+    req = urllib.request.Request(sys.argv[1], data)
+    with urllib.request.urlopen(req) as response:
+        html = response.read()
+
+    print(html.decode('utf-8'))
