@@ -7,7 +7,7 @@ import requests
 
 if __name__ == "__main__":
     re = requests.get('https://api.github.com/repos/{}/{}/commits'
-                        .format(sys.argv[2], sys.argv[1]))
+                      .format(sys.argv[2], sys.argv[1]))
     if re.status_code >= 400:
         print('None')
     else:

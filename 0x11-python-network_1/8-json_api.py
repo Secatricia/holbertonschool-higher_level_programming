@@ -4,19 +4,17 @@ Takes in a letter and sends a POST request to 8-json_api.py
 with the letter as a parameter.
 """
 import requests
-from sys import argv
-
+import sys
 if __name__ == "__main__":
-    if len(argv) == 1:
-        dt = {'q': ""}
-    else:
-        dt = {'q': argv[1]}
 
-    response = requests.post(url='http://0.0.0.0:5000/search_user', data=dt)
-    re = response.json()
-    if response.headers.get('content-type') != 'application/json':
+    dt = "" if len(sys.argv) == 1 else sys.argv[1]
+    re = requests.post('http://0.0.0.0:5000/search_user', data={'q': dt})
+
+    try:
+        resp = re.json()
+        if resp == {}:
+            print('No result')
+        else:
+            print("[{}] {}".format(resp.get('id'), resp.get('name')))
+    except ValueError:
         print('Not a valid JSON')
-    elif re == {}:
-        print('No result')
-    else:
-        print('[{}] {}'.format(re['id'], re['name']))
