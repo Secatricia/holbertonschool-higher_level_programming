@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-#Write a function that finds a peak in a list of unsorted integers
+"""Write a function that finds a peak in a list of unsorted integers"""
+
 
 def find_peak(list_of_integers):
     """
@@ -19,7 +20,8 @@ def find_peak(list_of_integers):
             if size_cp // 2 == 0:
                 size_cp = 2
             size_two = size_two + size_cp // 2
-        elif size_cp > 0 and list_of_integers[size_two] < list_of_integers[size_two - 1]:
+        elif size_cp > 0 and \
+                list_of_integers[size_two] < list_of_integers[size_two - 1]:
             if size_cp // 2 == 0:
                 size_cp = 2
             size_two = size_two - size_cp // 2
